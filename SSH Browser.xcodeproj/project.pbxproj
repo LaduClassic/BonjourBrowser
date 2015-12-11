@@ -11,6 +11,7 @@
 		F461A4591C1B421500FA790A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F461A4581C1B421500FA790A /* main.m */; };
 		F461A45B1C1B421500FA790A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F461A45A1C1B421500FA790A /* Assets.xcassets */; };
 		F461A45E1C1B421500FA790A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F461A45C1C1B421500FA790A /* MainMenu.xib */; };
+		F461A4661C1B427A00FA790A /* SSHServers.m in Sources */ = {isa = PBXBuildFile; fileRef = F461A4651C1B427A00FA790A /* SSHServers.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,8 @@
 		F461A45A1C1B421500FA790A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F461A45D1C1B421500FA790A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		F461A45F1C1B421500FA790A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F461A4651C1B427A00FA790A /* SSHServers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSHServers.m; sourceTree = "<group>"; };
+		F461A4671C1B428900FA790A /* SSHServers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSHServers.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +62,8 @@
 				F461A45C1C1B421500FA790A /* MainMenu.xib */,
 				F461A45F1C1B421500FA790A /* Info.plist */,
 				F461A4571C1B421500FA790A /* Supporting Files */,
+				F461A4651C1B427A00FA790A /* SSHServers.m */,
+				F461A4671C1B428900FA790A /* SSHServers.h */,
 			);
 			path = "SSH Browser";
 			sourceTree = "<group>";
@@ -140,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F461A4661C1B427A00FA790A /* SSHServers.m in Sources */,
 				F461A4591C1B421500FA790A /* main.m in Sources */,
 				F461A4561C1B421500FA790A /* AppDelegate.m in Sources */,
 			);
