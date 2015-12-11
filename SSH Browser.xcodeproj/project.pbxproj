@@ -24,6 +24,9 @@
 		F461A45F1C1B421500FA790A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F461A4651C1B427A00FA790A /* SSHServers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSHServers.m; sourceTree = "<group>"; };
 		F461A4671C1B428900FA790A /* SSHServers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSHServers.h; sourceTree = "<group>"; };
+		F461A4691C1B624E00FA790A /* network.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = network.png; sourceTree = "<group>"; };
+		F461A46A1C1B624E00FA790A /* network@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "network@2x.png"; sourceTree = "<group>"; };
+		F461A46B1C1B624E00FA790A /* network@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "network@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +59,7 @@
 		F461A4531C1B421500FA790A /* SSH Browser */ = {
 			isa = PBXGroup;
 			children = (
+				F461A4681C1B624000FA790A /* Images */,
 				F461A4541C1B421500FA790A /* AppDelegate.h */,
 				F461A4551C1B421500FA790A /* AppDelegate.m */,
 				F461A45A1C1B421500FA790A /* Assets.xcassets */,
@@ -74,6 +78,16 @@
 				F461A4581C1B421500FA790A /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F461A4681C1B624000FA790A /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				F461A4691C1B624E00FA790A /* network.png */,
+				F461A46A1C1B624E00FA790A /* network@2x.png */,
+				F461A46B1C1B624E00FA790A /* network@3x.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
