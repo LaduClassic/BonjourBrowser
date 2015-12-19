@@ -10,13 +10,14 @@
 
 @implementation SSHServer
 
-- (instancetype)initWithTitle:(NSString*)title andHost:(NSString*)host
+- (instancetype)initWithTitle:(NSString*)title host:(NSString*)host service:(NSNetService*)service
 {
 	self =[super init];
 	if (self)
 	{
 		self->_title = title;
 		self->_hostname = host;
+		self->_netService = service;
 	}
 	return self;
 }
@@ -53,13 +54,32 @@
 	[service scheduleInRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
 	[service resolveWithTimeout:10.];
 	[self.services addObject:service];
+	[self.services sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+		return [obj1 compare:obj2 options:NSDiacriticInsensitiveSearch|NSCaseInsensitiveSearch];
+	}];
+}
+
+- (void)netServiceBrowser:(NSNetServiceBrowser *)browser didRemoveService:(NSNetService *)service moreComing:(BOOL)moreComing
+{
+	for (SSHServer* server in self.list)
+	{
+		if ([server.netService.name isEqualToString:service.name]
+			&& [server.netService.type isEqualToString:service.type]
+			&& [server.netService.domain isEqualToString:service.domain]
+			)
+		{
+			[self.list removeObject:server];
+			break;
+		}
+	}
 }
 
 - (void)netServiceDidResolveAddress:(NSNetService *)sender
 {
-	SSHServer* server = [[SSHServer alloc] initWithTitle:sender.name andHost:sender.hostName];
+	SSHServer* server = [[SSHServer alloc] initWithTitle:sender.name host:sender.hostName service:sender];
 	[self.list addObject:server];
 	[self.services removeObject:sender];
+	[sender removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
 }
 
 @end

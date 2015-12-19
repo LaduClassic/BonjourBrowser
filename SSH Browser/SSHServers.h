@@ -15,6 +15,7 @@
 
 @property (readonly, atomic) NSString* title;
 @property (readonly, atomic) NSString* hostname;
+@property (readonly, atomic) NSNetService* netService;
 
 @end
 
