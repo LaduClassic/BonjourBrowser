@@ -54,9 +54,6 @@
 	[service scheduleInRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
 	[service resolveWithTimeout:10.];
 	[self.services addObject:service];
-	[self.services sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
-		return [obj1 compare:obj2 options:NSDiacriticInsensitiveSearch|NSCaseInsensitiveSearch];
-	}];
 }
 
 - (void)netServiceBrowser:(NSNetServiceBrowser *)browser didRemoveService:(NSNetService *)service moreComing:(BOOL)moreComing
@@ -80,6 +77,9 @@
 	[self.list addObject:server];
 	[self.services removeObject:sender];
 	[sender removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+	[self.list sortUsingComparator:^NSComparisonResult(SSHServer*  _Nonnull obj1, SSHServer*  _Nonnull obj2) {
+		return [obj1.title compare:obj2.title options:NSDiacriticInsensitiveSearch|NSCaseInsensitiveSearch];
+	}];
 }
 
 @end
