@@ -65,7 +65,7 @@
 				}
 			}
 		}
-		NSURL* url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://%@%@", server.hostname, path]];
+		NSURL* url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://%@:%ld%@", server.hostname, (long)server.netService.port, path]];
 		[[NSWorkspace sharedWorkspace] openURL:url];
 	}
 }
