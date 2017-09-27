@@ -7,11 +7,11 @@
 //
 
 #import "AppDelegate.h"
-#import "SSHServers.h"
+#import "ServerRegistry.h"
 
 @interface AppDelegate ()
 
-@property SSHServers* sshServers;
+@property ServerRegistry* sshServers;
 @property NSStatusItem* statusItem;
 
 @end
@@ -21,7 +21,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-	self.sshServers = [SSHServers new];
+	self.sshServers = [ServerRegistry new];
 
 	self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:26];
 	NSStatusBarButton* button = self.statusItem.button;
@@ -36,7 +36,7 @@
 
 - (IBAction)connectToSSHServer:(id)sender
 {
-	SSHServer* server = [sender representedObject];
+	Server* server = [sender representedObject];
 	if (server)
 	{
 		NSURL* url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"ssh://%@", server.hostname]];
@@ -50,7 +50,7 @@
 	item.enabled = NO;
 	[self.statusItem.menu addItem:item];
 
-	for (SSHServer* server in self.sshServers.list)
+	for (Server* server in self.sshServers.list)
 	{
 		NSMenuItem* item = [[NSMenuItem alloc] initWithTitle:server.title action:@selector(connectToSSHServer:) keyEquivalent:@""];
 		item.target = self;

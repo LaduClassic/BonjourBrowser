@@ -11,7 +11,7 @@
 
 #import <AppKit/AppKit.h>
 
-@interface SSHServer : NSObject
+@interface Server : NSObject
 
 @property (readonly, atomic) NSString* title;
 @property (readonly, atomic) NSString* hostname;
@@ -19,9 +19,9 @@
 
 @end
 
-@interface SSHServers : NSObject<NSNetServiceBrowserDelegate, NSNetServiceDelegate>
+@interface ServerRegistry : NSObject<NSNetServiceBrowserDelegate, NSNetServiceDelegate>
 
-@property (readonly, atomic) NSMutableArray<SSHServer*>* list;
+@property (readonly, atomic) NSMutableArray<Server*>* list;
 
 @end
 

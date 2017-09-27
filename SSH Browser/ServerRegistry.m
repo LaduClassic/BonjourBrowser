@@ -6,9 +6,9 @@
 //  Copyright © 2015 Arne Scheffler. All rights reserved.
 //
 
-#import "SSHServers.h"
+#import "ServerRegistry.h"
 
-@implementation SSHServer
+@implementation Server
 
 - (instancetype)initWithTitle:(NSString*)title host:(NSString*)host service:(NSNetService*)service
 {
@@ -24,14 +24,14 @@
 
 @end
 
-@interface SSHServers ()
+@interface ServerRegistry ()
 
 @property NSNetServiceBrowser* browser;
 @property NSMutableArray<NSNetService*>* services;
 
 @end
 
-@implementation SSHServers
+@implementation ServerRegistry
 
 - (instancetype)init
 {
@@ -58,7 +58,7 @@
 
 - (void)netServiceBrowser:(NSNetServiceBrowser *)browser didRemoveService:(NSNetService *)service moreComing:(BOOL)moreComing
 {
-	for (SSHServer* server in self.list)
+	for (Server* server in self.list)
 	{
 		if ([server.netService.name isEqualToString:service.name]
 			&& [server.netService.type isEqualToString:service.type]
@@ -73,11 +73,11 @@
 
 - (void)netServiceDidResolveAddress:(NSNetService *)sender
 {
-	SSHServer* server = [[SSHServer alloc] initWithTitle:sender.name host:sender.hostName service:sender];
+	Server* server = [[Server alloc] initWithTitle:sender.name host:sender.hostName service:sender];
 	[self.list addObject:server];
 	[self.services removeObject:sender];
 	[sender removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
-	[self.list sortUsingComparator:^NSComparisonResult(SSHServer*  _Nonnull obj1, SSHServer*  _Nonnull obj2) {
+	[self.list sortUsingComparator:^NSComparisonResult(Server*  _Nonnull obj1, Server*  _Nonnull obj2) {
 		return [obj1.title compare:obj2.title options:NSDiacriticInsensitiveSearch|NSCaseInsensitiveSearch];
 	}];
 }
