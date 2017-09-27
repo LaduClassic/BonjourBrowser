@@ -33,7 +33,7 @@
 
 @implementation ServerRegistry
 
-- (instancetype)init
+-(instancetype)initWithServiceType:(NSString*)serviceType inDomain:(NSString*)domain;
 {
 	self = [super init];
 	if (self)
@@ -43,7 +43,7 @@
 		self.browser = [NSNetServiceBrowser new];
 		self.browser.delegate = self;
 		[self.browser scheduleInRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
-		[self.browser searchForServicesOfType:@"_ssh._tcp" inDomain:@"local"];
+		[self.browser searchForServicesOfType:serviceType inDomain:domain];
 	}
 	return self;
 }

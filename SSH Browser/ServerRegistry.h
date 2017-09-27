@@ -11,6 +11,10 @@
 
 #import <AppKit/AppKit.h>
 
+static NSString* sshServiceType = @"_ssh._tcp";
+static NSString* httpServiceType = @"_http._tcp";
+static NSString* localDomain = @"local";
+
 @interface Server : NSObject
 
 @property (readonly, atomic) NSString* title;
@@ -22,6 +26,8 @@
 @interface ServerRegistry : NSObject<NSNetServiceBrowserDelegate, NSNetServiceDelegate>
 
 @property (readonly, atomic) NSMutableArray<Server*>* list;
+
+-(instancetype)initWithServiceType:(NSString*)serviceType inDomain:(NSString*)domain;
 
 @end
 
