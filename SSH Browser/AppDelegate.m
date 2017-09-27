@@ -11,7 +11,7 @@
 
 @interface AppDelegate ()
 
-@property SSHServers* servers;
+@property SSHServers* sshServers;
 @property NSStatusItem* statusItem;
 
 @end
@@ -21,7 +21,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-	self.servers = [SSHServers new];
+	self.sshServers = [SSHServers new];
 
 	self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:26];
 	NSStatusBarButton* button = self.statusItem.button;
@@ -50,7 +50,7 @@
 	item.enabled = NO;
 	[self.statusItem.menu addItem:item];
 
-	for (SSHServer* server in self.servers.list)
+	for (SSHServer* server in self.sshServers.list)
 	{
 		NSMenuItem* item = [[NSMenuItem alloc] initWithTitle:server.title action:@selector(connectToSSHServer:) keyEquivalent:@""];
 		item.target = self;
