@@ -1,6 +1,6 @@
 //
 //  SSHServers.m
-//  SSH Browser
+//  Bonjour Browser
 //
 //  Created by Arne Scheffler on 11.12.15.
 //  Copyright © 2015 Arne Scheffler. All rights reserved.

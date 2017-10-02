@@ -1,6 +1,6 @@
 //
 //  AppDelegate.m
-//  SSH Browser
+//  Bonjour Browser
 //
 //  Created by Arne Scheffler on 11.12.15.
 //  Copyright © 2015 Arne Scheffler. All rights reserved.
@@ -90,7 +90,7 @@
 	[self addServersFromRegistry:self.sshServers toMenu:self.statusItem.menu withTitle:@"SSH" andAction:@selector(connectToSSHServer:)];
 	[self addServersFromRegistry:self.webServers toMenu:self.statusItem.menu withTitle:@"HTTP" andAction:@selector(connectToHTTPServer:)];
 	[self.statusItem.menu addItem:[NSMenuItem separatorItem]];
-	NSMenuItem* item = [[NSMenuItem alloc] initWithTitle:@"Quit SSH Browser" action:@selector(terminate:) keyEquivalent:@""];
+	NSMenuItem* item = [[NSMenuItem alloc] initWithTitle:@"Quit Bonjour Browser" action:@selector(terminate:) keyEquivalent:@""];
 	[self.statusItem.menu addItem:item];
 }
 

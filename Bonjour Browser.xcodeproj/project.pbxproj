@@ -15,7 +15,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F461A4511C1B421500FA790A /* SSH Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SSH Browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F45770971F825C2300200783 /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
+		F461A4511C1B421500FA790A /* Bonjour Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bonjour Browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F461A4541C1B421500FA790A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F461A4551C1B421500FA790A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F461A4581C1B421500FA790A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -43,7 +44,8 @@
 		F461A4481C1B421500FA790A = {
 			isa = PBXGroup;
 			children = (
-				F461A4531C1B421500FA790A /* SSH Browser */,
+				F45770971F825C2300200783 /* readme.md */,
+				F461A4531C1B421500FA790A /* Bonjour Browser */,
 				F461A4521C1B421500FA790A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,12 +53,12 @@
 		F461A4521C1B421500FA790A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F461A4511C1B421500FA790A /* SSH Browser.app */,
+				F461A4511C1B421500FA790A /* Bonjour Browser.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F461A4531C1B421500FA790A /* SSH Browser */ = {
+		F461A4531C1B421500FA790A /* Bonjour Browser */ = {
 			isa = PBXGroup;
 			children = (
 				F461A4681C1B624000FA790A /* Images */,
@@ -69,7 +71,7 @@
 				F461A4651C1B427A00FA790A /* ServerRegistry.m */,
 				F461A4671C1B428900FA790A /* ServerRegistry.h */,
 			);
-			path = "SSH Browser";
+			path = "Bonjour Browser";
 			sourceTree = "<group>";
 		};
 		F461A4571C1B421500FA790A /* Supporting Files */ = {
@@ -93,9 +95,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F461A4501C1B421500FA790A /* SSH Browser */ = {
+		F461A4501C1B421500FA790A /* Bonjour Browser */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F461A4621C1B421500FA790A /* Build configuration list for PBXNativeTarget "SSH Browser" */;
+			buildConfigurationList = F461A4621C1B421500FA790A /* Build configuration list for PBXNativeTarget "Bonjour Browser" */;
 			buildPhases = (
 				F461A44D1C1B421500FA790A /* Sources */,
 				F461A44E1C1B421500FA790A /* Frameworks */,
@@ -105,9 +107,9 @@
 			);
 			dependencies = (
 			);
-			name = "SSH Browser";
+			name = "Bonjour Browser";
 			productName = "SSH Browser";
-			productReference = F461A4511C1B421500FA790A /* SSH Browser.app */;
+			productReference = F461A4511C1B421500FA790A /* Bonjour Browser.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -124,7 +126,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F461A44C1C1B421500FA790A /* Build configuration list for PBXProject "SSH Browser" */;
+			buildConfigurationList = F461A44C1C1B421500FA790A /* Build configuration list for PBXProject "Bonjour Browser" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -137,7 +139,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F461A4501C1B421500FA790A /* SSH Browser */,
+				F461A4501C1B421500FA790A /* Bonjour Browser */,
 			);
 		};
 /* End PBXProject section */
@@ -263,9 +265,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "SSH Browser/Info.plist";
+				INFOPLIST_FILE = "Bonjour Browser/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "de.knup.arne.SSH-Browser";
+				PRODUCT_BUNDLE_IDENTIFIER = "de.arne-scheffler.bonjour-browser";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -275,9 +277,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "SSH Browser/Info.plist";
+				INFOPLIST_FILE = "Bonjour Browser/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "de.knup.arne.SSH-Browser";
+				PRODUCT_BUNDLE_IDENTIFIER = "de.arne-scheffler.bonjour-browser";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -285,7 +287,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F461A44C1C1B421500FA790A /* Build configuration list for PBXProject "SSH Browser" */ = {
+		F461A44C1C1B421500FA790A /* Build configuration list for PBXProject "Bonjour Browser" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F461A4601C1B421500FA790A /* Debug */,
@@ -294,7 +296,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F461A4621C1B421500FA790A /* Build configuration list for PBXNativeTarget "SSH Browser" */ = {
+		F461A4621C1B421500FA790A /* Build configuration list for PBXNativeTarget "Bonjour Browser" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F461A4631C1B421500FA790A /* Debug */,
